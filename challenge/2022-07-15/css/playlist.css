@@ -1,67 +1,212 @@
-.playlist-screen{
+.playlist-screen {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.playlist-screen__image img{
+
+.playlist-screen__image img {
     width: 100px;
     height: 100px;
     border-radius: 50px;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
-    box-shadow: 0 5px 10px 1px;
+    box-shadow: 0 0px 10px 5px;
 }
-.playlist-screen__title{
+
+.playlist-screen__title {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 1200;
 }
-.playlist-screen__explanation{
+
+.playlist-screen__explanation {
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 15px;
-    font-weight: 600;
-    opacity: 0.3;
+    opacity: 0.7;
+    font-style: italic;
 }
-.playlist-screen__button{
+
+.playlist-screen__button {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.playlist-screen__button div:first-child{
+
+.playlist-screen__button div:first-child {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 80px;
     height: 35px;
-    background-color: black;
-    box-shadow: 0 0 2px 0.1px;
+    background-color: #b30047;
     border-radius: 15px;
     margin: 10px 5px;
-    color: white;
-    font-weight: 600;
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
 }
 
-.playlist-screen__button div:last-child{
+.playlist-screen__button div:last-child {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 80px;
     height: 35px;
-    background-color: white;
-    box-shadow: 0 0 2px 0.1px;
+    background-color: #b30047;
     border-radius: 15px;
     margin: 10px 5px;
-    font-weight: 600;
+    font-size: 12px;
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
 }
-.playlist-screen__button div:last-child span{
+
+.playlist-screen__button div:last-child span {
     padding: 3px;
 }
-.playlist-list__image img{
-    width: 50px;
-    height: 50px;
+
+.playlist-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.playlist-list__data {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* margin-bottom: 5px; */
+}
+
+.playlist-list__image {
+    width: 15%;
+    position: relative;
+}
+
+.playlist-list__image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0px 5px 1px;
+}
+
+.playing {
+    background-color: #800033;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.playing img {
+    opacity: 0.7;
+}
+
+.playlist-list__playing {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    display: none;
+}
+
+.playing .playlist-list__playing {
+    display: flex;
+    align-items: flex-end;
+}
+
+.playlist-list__playing div {
+    background-color: white;
+    border-radius: 10%;
+    width: 5px;
+    margin: 0 1px;
+}
+
+@keyframes playing {
+    0% {
+        height: 0;
+    }
+
+    25% {
+        height: 10px;
+    }
+
+    50% {
+        height: 25px;
+    }
+
+    75% {
+        height: 10px;
+    }
+
+    100% {
+        height: 0;
+    }
+}
+
+.playlist-list__playing div:first-child {
+    animation: playing 1s infinite;
+    animation-direction: reverse
+}
+
+.playlist-list__playing div:nth-child(2) {
+    animation: playing 1s infinite 0.2s
+}
+
+.playlist-list__playing div:last-child {
+    animation: playing 1s infinite 0.4s
+}
+
+.playlist-list__info {
+    width: 50%;
+    font-size: 14px;
+    line-height: 15px;
+}
+
+.playlist-list__title {
+    font-weight: 800px;
+}
+
+.playlist-list__explanation {
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.playlist-controller {
+    position: absolute;
+    bottom: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #800033;
+    border-radius: 25px;
+    width: 220px;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.playlist-controller__info {
+    font-size: 14px;
+    line-height: 15px;
+    margin: 5px 5px;
+}
+
+.playlist-controller__title {
+    font-weight: 800px;
+}
+
+.playlist-controller__explanation {
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.playlist-controller__button {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 5px;
 }
